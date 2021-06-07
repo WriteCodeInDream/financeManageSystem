@@ -49,8 +49,8 @@ public class ProjectManagePage extends BasePage{
     }
 
     /**
-     * 获取第几个操作
-     * @param index
+     * 获取第几个操作 0是用户名下拉列表，
+     * @param index 主合同列表第几个操作按钮
      * @return
      */
     private List<WebElement> operateButton(int index){
@@ -72,30 +72,42 @@ public class ProjectManagePage extends BasePage{
         return allOperations;
     }
 
-    /***
-     *  获取第一个操作
-     * @return
+    /**
+     *  获取主合同操作列表的一个操作
+     * @param value  操作名称
+     * @return  操作元素，点击跳转至操作页面
      */
-    private List<WebElement> operateButton(){
-        return operateButton(1);
-    }
-
-    private WebElement getOneOperate(String value){
-        return getElementByValue(value,operateButton());
+    private WebElement getOneOperate(String value, int index){
+        return getElementByValue(value,operateButton(index));
     }
 
     /**
-     *  获取页面contend页面
+     *  获取页面content页面  包括新增合同预算、合同结算、开票、收款、付款、完工情况、查看合同付款
      * @param value
      * @return
      */
-    public WebElement getOperateContent(String value){
-        clickElement(getOneOperate(value));
+    public WebElement getOperateContent(String value, int index){
+        clickElement(getOneOperate(value,index));
         return getElement("contentPage");
     }
 
+    public WebElement getOperateContent(String value){
+        clickElement(getOneOperate(value,1));
+        return getElement("contentPage");
+    }
+
+    /**
+     *  获取页面，包括查看主合同、编辑主合同、编辑合同预算、查看合同预算、查看关联合同、查看项目综合信息
+     * @param value
+     * @return
+     */
+    public WebElement getOperatePage(String value, int index){
+        clickElement(getOneOperate(value,index));
+        return getElement("pageWrap");
+    }
+
     public WebElement getOperatePage(String value){
-        clickElement(getOneOperate(value));
+        clickElement(getOneOperate(value,1));
         return getElement("pageWrap");
     }
 

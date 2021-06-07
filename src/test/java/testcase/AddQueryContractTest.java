@@ -4,11 +4,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddQueryContractHandle;
+import utils.GetDriver;
 
 public class AddQueryContractTest extends BaseCase {
     public AddQueryContractHandle qch;
     public AddQueryContractTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
     @BeforeMethod
     public void beforeTest(){
@@ -25,8 +26,4 @@ public class AddQueryContractTest extends BaseCase {
         qch.addQueryContract();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

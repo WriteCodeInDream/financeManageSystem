@@ -12,4 +12,15 @@ public class CommonPageOperate extends BaseOperate{
     public String getUsernameElement(){
         return getText(cp.getUsernameElement());
     }
+
+    public void clickContentCancelButton(){
+        clickElement(cp.getContentCancelButton());
+    }
+    public void clickContentCloseButton(){
+        clickElement(cp.getContentCloseButton());
+    }
+    public void clickContentCommitButton(){
+        clickElement(cp.getContentCommitButton());
+    }
+    public void clickReturnButton(){clickElement(cp.getReBackButton());}
 }

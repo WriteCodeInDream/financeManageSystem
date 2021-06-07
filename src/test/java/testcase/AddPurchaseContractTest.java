@@ -5,11 +5,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageHandle.AddPurchaseContractHandle;
+import utils.GetDriver;
 
 public class AddPurchaseContractTest extends BaseCase{
     public AddPurchaseContractHandle pch;
     public AddPurchaseContractTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
     @BeforeMethod
@@ -23,9 +24,5 @@ public class AddPurchaseContractTest extends BaseCase{
     @Test
     public void test1(){
         pch.addPurchaseContract();
-    }
-    @AfterTest
-    public void closeDriver(){
-        baseDriver.closeDriver();
     }
 }

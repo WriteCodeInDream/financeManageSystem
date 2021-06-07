@@ -2,14 +2,17 @@ package pageHandle;
 
 import driverRelative.BaseDriver;
 import enumString.ContractBudget;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.EditBudgetOperate;
 import utils.GetMoney;
 import utils.GetRandomChinese;
 
 public class EditBudgetHandle {
     public EditBudgetOperate ebo;
+    public CommonPageOperate co;
     public EditBudgetHandle(BaseDriver baseDriver){
         this.ebo = new EditBudgetOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void editBudget(){
@@ -41,5 +44,6 @@ public class EditBudgetHandle {
 
         ebo.sendKeysToRemark(ContractBudget.HYF, GetRandomChinese.create());
         System.out.println(ebo.getRemark(ContractBudget.HYF));
+        co.clickReturnButton();
     }
 }

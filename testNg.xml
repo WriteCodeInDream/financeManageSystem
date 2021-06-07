@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="3">
-    <test verbose="2"  name="TestDebug">
-        <packages>
-            <package name="testcase"></package>
-        </packages>
+<suite name="Suite" parallel="methods" thread-count="1">
+
+    <test verbose="2"  name="TestDebug" preserve-order="true">
+        <classes>
+            <class name="testcase.AddContractBudgetTest" ></class>
+            <class name="testcase.AddCompleterInfoTest"></class>
+            <class name="testcase.AddContractPaymentTest"></class>
+        </classes>
     </test> <!-- Test -->
+
+    <test name="testTwo" preserve-order="true">
+        <classes>
+            <class name="testcase.AddInvoiceAmountTest"></class>
+            <class name="testcase.AddMainContractTest"></class>
+            <class name="testcase.AddOtherContractTest"></class>
+            <class name="testcase.AddPurchaseContractTest"></class>
+            <class name="testcase.AddQueryContractTest"></class>
+            <class name="testcase.AddReceiveAmountTest"></class>
+            <class name="testcase.AddRentContractTest"></class></classes>
+    </test>
 </suite> <!-- Suite -->

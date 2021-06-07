@@ -13,7 +13,7 @@ public class AddContractBudgetPage extends BasePage {
     public WebElement cbp;
     public AddContractBudgetPage(BaseDriver baseDriver) {
         super(baseDriver);
-        this.cbp = new ProjectManagePage(baseDriver).getOperateContent(ContractOperate.ADD_CONTRACT_BUDGET.contractOperate);
+        this.cbp = new ProjectManagePage(baseDriver).getOperateContent(ContractOperate.ADD_CONTRACT_BUDGET.contractOperate, 1);
     }
 
     /**

@@ -1,14 +1,17 @@
 package testcase;
 
+import driverRelative.BaseDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddCompleteInfoHandle;
+import pageHandle.CommonPageHandel;
+import utils.GetDriver;
 
 public class AddCompleterInfoTest extends BaseCase{
     public AddCompleteInfoHandle cih;
     public AddCompleterInfoTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
     @BeforeMethod
@@ -21,8 +24,4 @@ public class AddCompleterInfoTest extends BaseCase{
         cih.addCompleteInfo();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

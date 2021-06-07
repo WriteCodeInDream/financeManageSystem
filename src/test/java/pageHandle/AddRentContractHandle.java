@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.RentContractOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -8,8 +9,10 @@ import utils.GetRandomChinese;
 
 public class AddRentContractHandle {
     public RentContractOperate rco;
+    public CommonPageOperate co;
     public AddRentContractHandle(BaseDriver baseDriver){
         this.rco = new RentContractOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
     public void addRentContract(){
         rco.clickRelativeContractByRandom();
@@ -32,6 +35,6 @@ public class AddRentContractHandle {
         rco.sendKeysToPerformanceTimeInput("2021-05-17");
         rco.sendKeysToReturnTimeInput("2021-03-15");
         rco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        rco.clickCloseButton();
+        co.clickContentCloseButton();
     }
 }

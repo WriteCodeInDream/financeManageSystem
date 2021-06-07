@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.QueryContractOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -8,8 +9,10 @@ import utils.GetRandomChinese;
 
 public class AddQueryContractHandle {
     public QueryContractOperate qco;
+    public CommonPageOperate co;
     public AddQueryContractHandle(BaseDriver baseDriver){
         this.qco = new QueryContractOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void addQueryContract(){
@@ -33,6 +36,6 @@ public class AddQueryContractHandle {
         qco.sendKeysToCompleteAmountInput(GetMoney.getRandomMoney(2,0));
         qco.sendKeysToReturnTimeInput("2021-03-15");
         qco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        qco.clickCloseButton();
+        co.clickContentCloseButton();
     }
 }

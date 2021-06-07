@@ -4,13 +4,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddSubcontractPageHandle;
+import utils.GetDriver;
 
 
 public class AddSubcontractTest extends BaseCase{
     public AddSubcontractPageHandle sph;
 
     public AddSubcontractTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
     @BeforeMethod
@@ -27,9 +28,5 @@ public class AddSubcontractTest extends BaseCase{
         sph.addSubContract();
     }
 
-    @AfterTest
-    public void closeDriver(){
-        baseDriver.closeDriver();
-    }
 
 }

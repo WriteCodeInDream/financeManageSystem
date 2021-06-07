@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.MainContractOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -11,8 +12,10 @@ import java.util.Date;
 
 public class AddMainContractHandel {
     public MainContractOperate mco;
+    public CommonPageOperate co;
     public AddMainContractHandel(BaseDriver baseDriver){
         this.mco = new MainContractOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
 
@@ -48,5 +51,6 @@ public class AddMainContractHandel {
         mco.sendKeysToContractCopiesInput(GetRandomChinese.create(28));
         mco.sendKeysToRemarkInput(GetRandomChinese.create(37));
         mco.sendKeysToEntrustCompany(GetRandomChinese.create(15));
+        co.clickContentCloseButton();
     }
 }

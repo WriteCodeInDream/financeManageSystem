@@ -4,11 +4,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddReceiveAmountHandle;
+import utils.GetDriver;
 
 public class AddReceiveAmountTest extends BaseCase{
     public AddReceiveAmountHandle rah;
     public AddReceiveAmountTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
     @BeforeMethod
@@ -21,8 +22,4 @@ public class AddReceiveAmountTest extends BaseCase{
         rah.addReceiveAmount();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

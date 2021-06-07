@@ -2,13 +2,16 @@ package pageHandle;
 
 import driverRelative.BaseDriver;
 import pageElementOperate.AddBudgetOperate;
+import pageElementOperate.CommonPageOperate;
 import utils.GetMoney;
 import utils.GetRandomChinese;
 
 public class AddContractBudgetHandle {
     public AddBudgetOperate abo;
+    public CommonPageOperate co;
     public AddContractBudgetHandle(BaseDriver baseDriver){
         this.abo = new AddBudgetOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void addContractBudget(){
@@ -18,5 +21,6 @@ public class AddContractBudgetHandle {
             }
             abo.sendKeysToRemarkInput(i, GetRandomChinese.create());
         }
+        co.clickContentCloseButton();
     }
 }

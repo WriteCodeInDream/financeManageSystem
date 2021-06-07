@@ -4,11 +4,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.EditBudgetHandle;
+import utils.GetDriver;
 
 public class EditBudgeTest extends BaseCase {
     public EditBudgetHandle ebh;
     public EditBudgeTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
     @BeforeMethod
     public void beforeTest(){
@@ -20,8 +21,4 @@ public class EditBudgeTest extends BaseCase {
         ebh.editBudget();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

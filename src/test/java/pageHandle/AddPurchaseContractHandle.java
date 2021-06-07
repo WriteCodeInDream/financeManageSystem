@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.PurchaseContractOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -8,8 +9,10 @@ import utils.GetRandomChinese;
 
 public class AddPurchaseContractHandle {
     public PurchaseContractOperate pco;
+    public CommonPageOperate co;
     public AddPurchaseContractHandle(BaseDriver baseDriver){
         this.pco = new PurchaseContractOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void addPurchaseContract(){
@@ -33,6 +36,6 @@ public class AddPurchaseContractHandle {
         pco.sendKeysToPerformanceTimeInput("2021-05-17");
         pco.sendKeysToReturnTimeInput("2021-03-15");
         pco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        pco.clickCloseButton();
+        co.clickContentCloseButton();
     }
 }

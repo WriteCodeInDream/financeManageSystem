@@ -11,4 +11,19 @@ public class CommonPage extends BasePage{
     public WebElement getUsernameElement(){
         return getElement("usernameInfo");
     }
+
+
+    public WebElement getContentCancelButton(){
+        return getElement("cancelButton");
+    }
+
+    public WebElement getContentCloseButton(){
+        return getElement("closeButton");
+    }
+
+    public WebElement getContentCommitButton(){
+        return getElement("commitButton");
+    }
+
+    public WebElement getReBackButton(){return getElement("reBackButton");}
 }

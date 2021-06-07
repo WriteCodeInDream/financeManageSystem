@@ -2,13 +2,16 @@ package pageHandle;
 
 import driverRelative.BaseDriver;
 import pageElementOperate.AddContractPaymentOperate;
+import pageElementOperate.CommonPageOperate;
 import utils.GetMoney;
 import utils.GetRandomChinese;
 
 public class AddContractPaymentHandle {
     public AddContractPaymentOperate cpo;
+    public CommonPageOperate co;
     public AddContractPaymentHandle(BaseDriver baseDriver){
         this.cpo = new AddContractPaymentOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
     public void addContractPayment(){
         for(int i = 0; i < 58; i++){
@@ -21,5 +24,6 @@ public class AddContractPaymentHandle {
                 cpo.sendKeysToPayment(i, GetMoney.getRandomMoney());
             }
         }
+        co.clickContentCloseButton();
     }
 }

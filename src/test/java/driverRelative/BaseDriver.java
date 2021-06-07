@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.TimeSleep;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -50,7 +51,16 @@ public class BaseDriver {
      * 获取单个元素
      */
     public WebElement getElementByLocator(By by){
-        return baseDriver.findElement(by);
+        List<WebElement> allElements =baseDriver.findElements(by);
+        if (allElements.size() == 1){
+            return allElements.get(0);
+        }
+        for(WebElement element : allElements){
+            if (isDisplayed(element)){
+                return element;
+            }
+        }
+        throw new RuntimeException("---");
     }
 
 

@@ -4,11 +4,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddSettlementAmountHandle;
+import utils.GetDriver;
 
 public class AddSettlementAmountTest extends BaseCase{
     public AddSettlementAmountHandle sah;
     public AddSettlementAmountTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
     @BeforeMethod
@@ -21,8 +22,4 @@ public class AddSettlementAmountTest extends BaseCase{
         sah.addSettlementAmount();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

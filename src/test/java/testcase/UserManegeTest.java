@@ -3,10 +3,11 @@ package testcase;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pageHandle.UserManageHandle;
+import utils.GetDriver;
 
 public class UserManegeTest extends BaseCase{
     public UserManegeTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
         this.umh = new UserManageHandle(baseDriver);
     }
     public UserManageHandle umh;
@@ -16,8 +17,4 @@ public class UserManegeTest extends BaseCase{
         umh.getUserDept();
     }
 
-    @AfterTest
-    public void afterTest(){
-        baseDriver.closeDriver();
-    }
 }

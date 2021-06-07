@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.SubcontractPageOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -11,8 +12,10 @@ import utils.UploadFile;
 
 public class AddSubcontractPageHandle {
     public SubcontractPageOperate spo;
+    public CommonPageOperate co;
     public AddSubcontractPageHandle(BaseDriver baseDriver){
         this.spo = new SubcontractPageOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void addSubContract(){
@@ -39,5 +42,6 @@ public class AddSubcontractPageHandle {
         spo.clickUploadFileButton();
         String[] files = {"1.jpg","访客记录图片.jpg"};
         UploadFile.uploadFile("D:\\奇怪的文件\\bug截图\\", files);
+        co.clickContentCloseButton();
     }
 }

@@ -1,6 +1,7 @@
 package pageHandle;
 
 import driverRelative.BaseDriver;
+import pageElementOperate.CommonPageOperate;
 import pageElementOperate.OtherContractOperate;
 import utils.GetContractNumber;
 import utils.GetMoney;
@@ -8,8 +9,10 @@ import utils.GetRandomChinese;
 
 public class AddOtherContractHandle {
     public OtherContractOperate oco;
+    public CommonPageOperate co;
     public AddOtherContractHandle(BaseDriver baseDriver){
         this.oco = new OtherContractOperate(baseDriver);
+        this.co = new CommonPageOperate(baseDriver);
     }
 
     public void addOtherContract(){
@@ -33,6 +36,6 @@ public class AddOtherContractHandle {
         oco.sendKeysToPaymentInput(GetMoney.getRandomMoney(6,0));
         oco.sendKeysToReturnTimeInput("2021-03-15");
         oco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        oco.clickCloseButton();
+        co.clickContentCloseButton();
     }
 }

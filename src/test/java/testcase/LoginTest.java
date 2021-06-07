@@ -7,6 +7,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageHandle.LoginHandle;
 import testResultHandle.TestListener;
+import utils.GetDriver;
 import utils.GetEnvironment;
 
 @Listeners(TestListener.class)
@@ -14,7 +15,7 @@ public class LoginTest extends BaseCase{
     LoginHandle loginHandle;
 
     public LoginTest() {
-        super("chrome");
+        super(GetDriver.getBaseDriver());
     }
 
 
@@ -29,8 +30,4 @@ public class LoginTest extends BaseCase{
     }
 
 
-    @AfterTest
-    public void testAfter(){
-        baseDriver.closeDriver();
-    }
 }

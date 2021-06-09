@@ -35,6 +35,6 @@ public class AddRentContractHandle {
         rco.sendKeysToPerformanceTimeInput("2021-05-17");
         rco.sendKeysToReturnTimeInput("2021-03-15");
         rco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

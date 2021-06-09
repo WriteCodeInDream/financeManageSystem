@@ -1,11 +1,8 @@
-package testcase;
+package testCase;
 
-import driverRelative.BaseDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageHandle.AddCompleteInfoHandle;
-import pageHandle.CommonPageHandel;
 import utils.GetDriver;
 
 public class AddCompleterInfoTest extends BaseCase{

@@ -9,31 +9,17 @@ import utils.GetDownList;
 
 import java.util.List;
 
-public class AddSubcontractPage extends BasePage implements IAddContractPage {
+public class AddSubcontractPage extends BasePage {
     public WebElement asp;
     public AddSubcontractPage(BaseDriver baseDriver) {
         super(baseDriver);
         this.asp = new ProjectManagePage(baseDriver).addMainContractPage();
     }
 
-    @Override
-    public WebElement getCloseButton() {
-        return getElementByElement(asp,"closeButton");
-    }
-
-    @Override
-    public WebElement getCommitButton() {
-        return null;
-    }
-
-    @Override
-    public WebElement getCancelButton() {
-        return null;
-    }
 
     /**
      * 获取所有的合同类型
-     * @return
+     * @return 所有合同类型
      */
     public List<WebElement> getAllContractType(){
         clickElementByElement(asp, "mainContractType");
@@ -50,7 +36,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /**
      * 最新合同编号
-     * @return
+     * @return 最新合同编号
      */
     public WebElement getSubContractNumber(){
         return getElementByElement(asp,"sub-newContractNumber");
@@ -58,7 +44,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /***
      * 关联主合同输入框
-     * @return
+     * @return 关联主合同输入框
      */
     public WebElement getRelativeContract(){
         return getElementByElement(asp,"sub-relativeContractInput");
@@ -91,7 +77,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
     }
     /**
      * 登记时间
-     * @return
+     * @return 登记时间输入框
      */
     public WebElement getRegisterDate(){
         return getElementByElement(asp,"sub-registerDateInput");
@@ -99,7 +85,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /**
      * 分包合同合同编号
-     * @return
+     * @return 分包合同编号输入框
      */
     public WebElement getSubContractNumberInput(){
         return getElementByElement(asp,"sub-contractNumberInput");
@@ -107,7 +93,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /**
      * 分包合同项目名称
-     * @return
+     * @return 项目名称输入框
      */
     public WebElement getProjectName(){
         return getElementByElement(asp,"sub-projectNameInput");
@@ -115,7 +101,7 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /**
      * 分包合同工程地点输入框
-     * @return
+     * @return 分包合同工程地点输入框
      */
     public WebElement getProjectSite(){
         return getElementByElement(asp,"sub-projectSiteInput");
@@ -123,19 +109,12 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
 
     /**
      * 分包合同委托实施单位
-     * @return
+     * @return 委托实施单位输入框
      */
     public WebElement getClientUnit(){
         return getElementByElement(asp,"sub-clientUnitInput");
     }
 
-    /**
-     * 实施实体输入框
-     * @return
-     */
-    public WebElement getPracticingEntityInput(){
-        return getElementByElement(asp,"sub-practicingEntityInput");
-    }
 
     /**
      *
@@ -146,21 +125,23 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
         return GetDownList.getDownList(baseDriver);
     }
 
-
+    /**
+     *
+     * @return 随机的实施实体
+     */
     public WebElement getOnePracticingEntityRandom(){
         return getElementByRandom(getPracticingEntityList());
     }
 
+    /**
+     *
+     * @param value 实施实体
+     * @return 实施实体li
+     */
     public WebElement getOnePracticingEntityByValue(String value){
         return getElementByValue(value, getPracticingEntityList());
     }
-    /**
-     * 分包合同委托方式
-     * @return
-     */
-    public WebElement getEntrustMethod(){
-        return getElementByElement(asp,"sub-entrustMethodInput");
-    }
+
 
     /**
      *
@@ -171,6 +152,10 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
         return GetDownList.getDownList(baseDriver);
     }
 
+    /**
+     *
+     * @return 随机选择委托方式
+     */
     public WebElement getEntrustMethodRandom(){
         return getElementByRandom(getEntrustMethodList());
     }
@@ -247,19 +232,13 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
         return getElementByElement(asp,"sub-invoiceAmountInput");
     }
 
-    /**
-     *  付款状态输入框
-     * @return
-     */
-    public WebElement getPaymentStatus(){
-        return getElementByElement(asp,"sub-paymentStatusInput");
-    }
+
 
     /**
      *
      * @return 付款状态下拉列表
      */
-    public List<WebElement> getPaymentStatusList(){
+    private List<WebElement> getPaymentStatusList(){
         clickElementByElement(asp,"sub-paymentStatusInput");
         return GetDownList.getDownList(baseDriver);
     }
@@ -304,8 +283,14 @@ public class AddSubcontractPage extends BasePage implements IAddContractPage {
         return getElementByElement(asp,"sub-remarkInput");
     }
 
+    /**
+     *
+     * @return 上传附件按钮
+     */
     public WebElement getFileUploadButton(){
         return getElement("fileUpload");
     }
+
+
 
 }

@@ -36,6 +36,6 @@ public class AddOtherContractHandle {
         oco.sendKeysToPaymentInput(GetMoney.getRandomMoney(6,0));
         oco.sendKeysToReturnTimeInput("2021-03-15");
         oco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

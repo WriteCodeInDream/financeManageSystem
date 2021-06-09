@@ -8,10 +8,14 @@ import utils.TimeSleep;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class BaseDriver {
+
+    // webdriver 对象
     private WebDriver baseDriver;
+    // 浏览运行速度设置
     long speed = 500;
     // 获取driver对象
     public BaseDriver(String driverType){
@@ -60,14 +64,15 @@ public class BaseDriver {
                 return element;
             }
         }
-        throw new RuntimeException("---");
+        // 没有找到页面元素
+        throw new NoSuchElementException("没有找到该页面预算，检查定位方式以及运行速度");
     }
 
-
+    // 通过主页面获取一组元素
     public List<WebElement> getElementsByLocator(By by){
         return baseDriver.findElements(by);
     }
-    // 通过页面元素获取单个元素
+    // 通过主页面元素获取单个元素
     public WebElement getElementByElement(WebElement element, By by){
         return element.findElement(by);
     }
@@ -81,7 +86,13 @@ public class BaseDriver {
      * 获取一组元素
      */
     public List<WebElement> getElements(By by){
-        return baseDriver.findElements(by);
+        List<WebElement> elements = new ArrayList<>();
+        for(WebElement element : baseDriver.findElements(by)){
+            if(element.isDisplayed()){
+                elements.add(element);
+            }
+        }
+        return elements;
     }
 
 
@@ -138,14 +149,22 @@ public class BaseDriver {
         baseDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    // 设置浏览器运行速度
     public void setRunSpeed(long speed){
         this.speed = speed;
     }
 
+    // 判断页面元素是否展示
     public Boolean isDisplayed(WebElement element){
         return element.isDisplayed();
     }
 
+
+    public WebElement getActiveElement(){
+       return baseDriver.switchTo().activeElement();
+    }
+
+    // 获取当前url
     public String getCurrentUrl(){
         return baseDriver.getCurrentUrl();
     }

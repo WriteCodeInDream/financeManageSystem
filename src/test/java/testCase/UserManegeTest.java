@@ -1,6 +1,5 @@
-package testcase;
+package testCase;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pageHandle.UserManageHandle;
 import utils.GetDriver;

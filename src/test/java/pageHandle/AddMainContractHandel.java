@@ -18,16 +18,16 @@ public class AddMainContractHandel {
         this.co = new CommonPageOperate(baseDriver);
     }
 
-
+    /**
+     *
+     * @return 当天时间
+     */
     public String getDate(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-dd-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-dd-MM");
         Date date = new Date();
         return sdf.format(date);
     }
 
-    /***
-     * 选择主合同类型，让他随机选一个类型吧
-     */
 
 
     public void addMainContract(){
@@ -41,7 +41,7 @@ public class AddMainContractHandel {
         mco.sendKeysToSettlementAmountInput(GetMoney.getRandomMoney(4 , 0));
         mco.sendKeysToContractMoneyInput(GetMoney.getRandomMoney(5,1));
         mco.sendKeysToInvoiceAmountInput(GetMoney.getRandomMoney(6, 2));
-        mco.sendKeysToRecieveAmountInput(GetMoney.getRandomMoney(7, 1));
+        mco.sendKeysToReceiveAmountInput(GetMoney.getRandomMoney(7, 1));
         mco.sendKeysToProjectNameInput(GetRandomChinese.create(20));
         mco.sendKeysToProjectNatureInput(GetRandomChinese.create(15));
         mco.sendKeysToProjectSourceInput(GetRandomChinese.create(40));
@@ -51,6 +51,6 @@ public class AddMainContractHandel {
         mco.sendKeysToContractCopiesInput(GetRandomChinese.create(28));
         mco.sendKeysToRemarkInput(GetRandomChinese.create(37));
         mco.sendKeysToEntrustCompany(GetRandomChinese.create(15));
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

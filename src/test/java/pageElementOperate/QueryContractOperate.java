@@ -37,7 +37,7 @@ public class QueryContractOperate extends BaseOperate{
 
     /**
      * 输入选择关联主合同
-     * @param value
+     * @param value 关联合同名称
      */
     public void clickRelativeContractByValue(String value){
         sendKeys(qcp.getRelativeContract(),value);
@@ -96,6 +96,10 @@ public class QueryContractOperate extends BaseOperate{
         clickElement(qcp.getOnePracticingEntityByValue(value));
     }
     //随机选择实施实体
+
+    /**
+     *  随机选择实施实体
+     */
     public void choosePracticingEntityRandom(){
         clickElement(qcp.getOnePracticingEntityRandom());
     }
@@ -207,8 +211,6 @@ public class QueryContractOperate extends BaseOperate{
     public void sendKeysToRemarkInput(String value){
         sendKeys(qcp.getRemarkInput(),value);
     }
-    // 关闭模态框的×
-    public void clickCloseButton(){
-        clickElement(qcp.getCloseButton());
-    }
+
+
 }

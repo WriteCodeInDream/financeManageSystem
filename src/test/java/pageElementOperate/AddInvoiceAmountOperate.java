@@ -14,19 +14,35 @@ public class AddInvoiceAmountOperate extends BaseOperate {
         baseDriver.setRunSpeed(200);
     }
 
+    /**
+     *
+     * @param date 开票时间
+     */
     public void sendKeysToInvoiceTime(String date){
         clickElement(iap.getInvoiceTimeInput());
         ChooseDate.chooseDate(date, baseDriver, iap.getInvoiceTimeDate());
     }
 
+    /**
+     *
+     * @param amount 开票金额
+     */
     public void sendKeysToInvoiceAmount(String amount){
         sendKeys(iap.getInvoiceAmountInput(), amount);
     }
 
+    /**
+     *
+     * @param payerName 开票方
+     */
     public void sendKeysToBuyerInput(String payerName){
         sendKeys(iap.getBuyerName(), payerName);
     }
 
+    /**
+     *
+     * @param remark 备注
+     */
     public void sendKeysToRemarkInput(String remark){
         sendKeys(iap.getRemarkInput(), remark);
     }

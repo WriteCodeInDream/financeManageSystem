@@ -8,38 +8,26 @@ import utils.GetDownList;
 
 import java.util.List;
 
-public class AddMainContractPage  extends BasePage implements IAddContractPage {
+public class AddMainContractPage  extends BasePage {
     private WebElement mainContractPage;
     public AddMainContractPage(BaseDriver baseDriver) {
         super(baseDriver);
-
         this.mainContractPage = new ProjectManagePage(baseDriver).addMainContractPage();
     }
 
-    @Override
-    public WebElement getCloseButton() {
-        return null;
-    }
 
-    @Override
-    public WebElement getCommitButton() {
-        return null;
-    }
-
-    @Override
-    public WebElement getCancelButton() {
-        return null;
-    }
-
-    /**
-     * 新增主合同元素
+    /***
+     *
+     * @return 主合同编号输入框
      */
-
-
     public WebElement getNewNumber(){
         return getElementByElement(mainContractPage,"main-newContractNumber");
     }
 
+    /**
+     *
+     * @return 登记时间输入框
+     */
     public WebElement registerDateInput(){
         return getElementByElement(mainContractPage,"main-registerDateInput");
     }
@@ -224,4 +212,5 @@ public class AddMainContractPage  extends BasePage implements IAddContractPage {
     public WebElement remarkInput(){
         return getElementByElement(mainContractPage,"main-remarkInput");
     }
-}
+    // 关闭模态框
+   }

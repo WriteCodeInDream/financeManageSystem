@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import testcase.BaseCase;
+import testCase.BaseCase;
 
 import java.io.*;
 import java.lang.reflect.Method;

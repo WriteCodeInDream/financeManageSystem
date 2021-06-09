@@ -1,8 +1,6 @@
-package testcase;
+package testCase;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageHandle.AddPurchaseContractHandle;
 import utils.GetDriver;

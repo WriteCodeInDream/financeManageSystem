@@ -18,6 +18,6 @@ public class AddReceiveAmountHandle {
         rao.sendKeysToReceiveAmount(GetMoney.getRandomMoney());
         rao.sendKeysToPayerInput(GetRandomChinese.create());
         rao.sendKeysToRemarkInput(GetRandomChinese.create());
-        co.clickContentCloseButton();
+        co.clickCommitContent();
     }
 }

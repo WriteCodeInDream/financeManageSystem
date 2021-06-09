@@ -9,27 +9,12 @@ import utils.GetDownList;
 
 import java.util.List;
 
-public class AddRentContractPage extends BasePage implements IAddContractPage {
+public class AddRentContractPage extends BasePage {
 
     public WebElement rcp;
     public AddRentContractPage(BaseDriver baseDriver) {
         super(baseDriver);
         this.rcp = new ProjectManagePage(baseDriver).addMainContractPage();
-    }
-
-    @Override
-    public WebElement getCloseButton() {
-        return getElementByElement(rcp,"closeButton");
-    }
-
-    @Override
-    public WebElement getCommitButton() {
-        return null;
-    }
-
-    @Override
-    public WebElement getCancelButton() {
-        return null;
     }
 
     /**
@@ -50,7 +35,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
     }
     /**
      * 最新合同编号
-     * @return
+     * @return 最新合同编号
      */
     public WebElement getRentContractNumber(){
         return getElementByElement(rcp,"rent-newContractNumber");
@@ -58,7 +43,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
 
     /***
      * 关联主合同输入框
-     * @return
+     * @ return 关联主合同输入款
      */
     public WebElement getRelativeContract(){
         return getElementByElement(rcp,"rent-relativeContractInput");
@@ -91,7 +76,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
     }
     /**
      * 登记时间
-     * @return
+     * @return 登记时间输入框
      */
     public WebElement getRegisterDate(){
         return getElementByElement(rcp,"rent-registerDateInput");
@@ -99,7 +84,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
 
     /**
      * 租赁合同合同编号
-     * @return
+     * @return 合同编号输入款
      */
     public WebElement getRentContractNumberInput(){
         return getElementByElement(rcp,"rent-contractNumberInput");
@@ -107,7 +92,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
 
     /**
      * 租赁合同项目名称
-     * @return
+     * @return 项目名称输入框
      */
     public WebElement getProjectName(){
         return getElementByElement(rcp,"rent-projectNameInput");
@@ -115,7 +100,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
 
     /**
      * 租赁合同工程地点输入框
-     * @return
+     * @return 工程地点输入框
      */
     public WebElement getProjectSite(){
         return getElementByElement(rcp,"rent-projectSiteInput");
@@ -123,7 +108,7 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
 
     /**
      * 租赁合同甲方名称
-     * @return
+     * @return 甲方名称输入框
      */
     public WebElement getPartANameInput(){
         return getElementByElement(rcp,"rent-partANameInput");
@@ -131,13 +116,6 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
     // 租赁合同乙方名称
     public WebElement getPartBNameInput(){
         return getElementByElement(rcp,"rent-partBNameInput");
-    }
-    /**
-     * 实施实体输入框
-     * @return
-     */
-    public WebElement getPracticingEntityInput(){
-        return getElementByElement(rcp,"rent-practicingEntityInput");
     }
 
     /**
@@ -149,31 +127,36 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
         return GetDownList.getDownList(baseDriver);
     }
 
-
+    /**
+     *
+     * @return 随机实施实体
+     */
     public WebElement getOnePracticingEntityRandom(){
         return getElementByRandom(getPracticingEntityList());
     }
 
+    /**
+     *
+     * @param value 实施实体
+     * @return 实施实体li
+     */
     public WebElement getOnePracticingEntityByValue(String value){
         return getElementByValue(value, getPracticingEntityList());
-    }
-    /**
-     * 租赁合同委托方式
-     * @return
-     */
-    public WebElement getEntrustMethod(){
-        return getElementByElement(rcp,"rent-entrustMethodInput");
     }
 
     /**
      *
      * @return 租赁合同所有委托方式
      */
-    public List<WebElement> getEntrustMethodList(){
+    private List<WebElement> getEntrustMethodList(){
         clickElementByElement(rcp,"rent-entrustMethodInput");
         return GetDownList.getDownList(baseDriver);
     }
 
+    /**
+     *
+     * @return 随机委托方式
+     */
     public WebElement getEntrustMethodRandom(){
         return getElementByRandom(getEntrustMethodList());
     }
@@ -237,13 +220,6 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
         return getElementByElement(rcp,"rent-invoiceAmountInput");
     }
 
-    /**
-     *  付款状态输入框
-     * @return
-     */
-    public WebElement getPaymentStatus(){
-        return getElementByElement(rcp,"rent-paymentStatusInput");
-    }
 
     /**
      *
@@ -299,4 +275,5 @@ public class AddRentContractPage extends BasePage implements IAddContractPage {
     public WebElement getRemarkInput(){
         return getElementByElement(rcp,"rent-remarkInput");
     }
+
 }

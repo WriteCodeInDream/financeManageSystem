@@ -19,6 +19,6 @@ public class AddInvoiceAmountHandle {
         iao.sendKeysToInvoiceAmount(GetMoney.getRandomMoney());
         iao.sendKeysToBuyerInput(GetRandomChinese.create());
         iao.sendKeysToRemarkInput(GetRandomChinese.create());
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

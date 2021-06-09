@@ -19,11 +19,20 @@ public class AddCompleteInfoPage extends BasePage {
         return getElementByElement(cip, "contentInput");
     }
 
+    /**
+     *  项目完工时间
+     * @return 项目完工时间输入框
+     */
     public List<WebElement> getCompleteTime(){
         return baseDriver.getElementsByLocator(GetLocator.getElementLocator("dateControl"));
     }
 
+    /**
+     *
+     * @return 项目完工情况输入框
+     */
     public WebElement getCompleteInfo(){
         return getElementByElement(cip, "remarkInput");
     }
+
 }

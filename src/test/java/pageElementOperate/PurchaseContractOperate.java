@@ -24,13 +24,17 @@ public class PurchaseContractOperate extends BaseOperate {
     }
 
     /**
-     * @value 需要匹配的主合同字眼
+     * @value 需要匹配的主合同字眼 比如选择 2021-见证 开头的主合同
      * 随机选择关联主合同
      */
     public void clickRelativeContractByRandom(String value){
         sendKeys(pcp.getRelativeContract(),value);
         clickElement(pcp.getOneRelativeContractByRandom());
     }
+
+    /**
+     * 随机选择关联主合同
+     */
     public void clickRelativeContractByRandom() {
         clickElement(pcp.getOneRelativeContractByRandom());
     }
@@ -95,7 +99,11 @@ public class PurchaseContractOperate extends BaseOperate {
     public void choosePracticingEntityByValue(String value){
         clickElement(pcp.getOnePracticingEntityByValue(value));
     }
-    //随机选择实施实体
+
+
+    /***
+     * 随机选择实施实体
+     */
     public void choosePracticingEntityRandom(){
         clickElement(pcp.getOnePracticingEntityRandom());
     }
@@ -207,9 +215,6 @@ public class PurchaseContractOperate extends BaseOperate {
     public void sendKeysToRemarkInput(String value){
         sendKeys(pcp.getRemarkInput(),value);
     }
-    // 关闭模态框的×
-    public void clickCloseButton(){
-        clickElement(pcp.getCloseButton());
-    }
+
 }
 

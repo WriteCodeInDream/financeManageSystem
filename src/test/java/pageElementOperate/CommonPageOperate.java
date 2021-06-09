@@ -1,6 +1,7 @@
 package pageElementOperate;
 
 import driverRelative.BaseDriver;
+import org.openqa.selenium.WebElement;
 import pageElements.CommonPage;
 
 public class CommonPageOperate extends BaseOperate{
@@ -13,14 +14,36 @@ public class CommonPageOperate extends BaseOperate{
         return getText(cp.getUsernameElement());
     }
 
-    public void clickContentCancelButton(){
-        clickElement(cp.getContentCancelButton());
+    public void clickChangePassword(){
+        clickElement(cp.changePasswordElement());
     }
-    public void clickContentCloseButton(){
-        clickElement(cp.getContentCloseButton());
+
+    public void clickCloseContent(){
+        clickElement(cp.closeContent());
     }
-    public void clickContentCommitButton(){
-        clickElement(cp.getContentCommitButton());
+
+    public void clickCancelContent(){
+        clickElement(cp.cancelCommit());
     }
+
+    public void clickCommitContent(){
+        clickElement(cp.getConfirmButton());
+    }
+
+    public void clickCloseMessage(){
+        clickElement(cp.getCloseMessage());
+    }
+
+    public void clickCancelMessage(){
+        clickElement(cp.getCancelMessage());
+    }
+
+    public void clickConfirmMessage(){
+        clickElement(cp.getConfirmMessage());
+    }
+    public void loginOut(){
+        clickElement(cp.loginOutElement());
+    }
+
     public void clickReturnButton(){clickElement(cp.getReBackButton());}
 }

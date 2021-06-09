@@ -31,13 +31,17 @@ public class OtherContractOperate extends BaseOperate {
         sendKeys(ocp.getRelativeContract(),value);
         clickElement(ocp.getOneRelativeContractByRandom());
     }
+
+    /**
+     *  随机选择关联合同
+     */
     public void clickRelativeContractByRandom() {
         clickElement(ocp.getOneRelativeContractByRandom());
     }
 
     /**
      * 输入选择关联主合同
-     * @param value
+     * @param value 关联主合同名称
      */
     public void clickRelativeContractByValue(String value){
         sendKeys(ocp.getRelativeContract(),value);
@@ -211,8 +215,7 @@ public class OtherContractOperate extends BaseOperate {
     public void sendKeysToRemarkInput(String value){
         sendKeys(ocp.getRemarkInput(),value);
     }
-    // 关闭模态框的×
-    public void clickCloseButton(){
-        clickElement(ocp.getCloseButton());
-    }
+    // 点击关闭模态框
+
+
 }

@@ -9,7 +9,7 @@ import utils.GetLocator;
 
 public class MainContractOperate extends BaseOperate{
     public AddMainContractPage acp;
-    private BaseDriver baseDriver;
+    public BaseDriver baseDriver;
 
     public MainContractOperate(BaseDriver baseDriver){
         super(baseDriver);
@@ -43,7 +43,10 @@ public class MainContractOperate extends BaseOperate{
         clickElement(acp.oneMainContractTypeRandom());
     }
 
-    // 根据输入的类型选择主合同类型
+    /**
+     *  根据输入的主合同类型选择主合同类型
+     * @param value 主合同类型
+     */
     public void chooseTypeByValue(String value){
         clickElement(acp.oneMainContractTypeByValue(value));
     }
@@ -100,7 +103,7 @@ public class MainContractOperate extends BaseOperate{
      *
      * @param value 收款金额 非必填
      */
-    public void sendKeysToRecieveAmountInput(String value){
+    public void sendKeysToReceiveAmountInput(String value){
         sendKeys(acp.receivableAmountInput(), value);
     }
 
@@ -110,7 +113,11 @@ public class MainContractOperate extends BaseOperate{
     public void choosePracticingEntityRandom(){
         clickElement(acp.onePracticingEntityRandom());
     }
-    // 通过给定的值选择实施实体
+
+    /***
+     * 根据输入的实施实体选择
+     * @param value 实施实体
+     */
     public void choosePracticingEntityByValue(String value){
         clickElement(acp.onePracticingEntityByValue(value));
     }
@@ -188,4 +195,5 @@ public class MainContractOperate extends BaseOperate{
     public void sendKeysToRemarkInput(String value){
         sendKeys(acp.remarkInput(), value);
     }
-}
+
+   }

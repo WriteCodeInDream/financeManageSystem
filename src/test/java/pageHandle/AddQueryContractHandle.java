@@ -36,6 +36,6 @@ public class AddQueryContractHandle {
         qco.sendKeysToCompleteAmountInput(GetMoney.getRandomMoney(2,0));
         qco.sendKeysToReturnTimeInput("2021-03-15");
         qco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

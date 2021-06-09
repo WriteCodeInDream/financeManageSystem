@@ -9,15 +9,4 @@ public class CommonPageHandel {
             this.co = new CommonPageOperate(baseDriver);
     }
 
-    public void closeContent(){
-        co.clickContentCloseButton();
-    }
-
-    public void cancelOperate(){
-        co.clickContentCancelButton();
-    }
-
-    public void commitOperate(){
-        co.clickContentCommitButton();
-    }
 }

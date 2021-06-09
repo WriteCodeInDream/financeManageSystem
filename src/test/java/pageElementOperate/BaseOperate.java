@@ -19,6 +19,8 @@ public class BaseOperate {
     public void clearInput(@NotNull WebElement webElement){
         webElement.clear();
     }
+
+    // 点击元素
     public void clickElement(WebElement button){
         baseDriver.clickElement(button);
     }
@@ -26,7 +28,7 @@ public class BaseOperate {
     public String getText(WebElement element){
        return baseDriver.getText(element);
     }
-
+    // 获取元素属性值
     public String getAttribute(WebElement element){
         return baseDriver.getAttribute(element);
     }

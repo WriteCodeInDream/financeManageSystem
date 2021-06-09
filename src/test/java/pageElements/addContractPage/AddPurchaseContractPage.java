@@ -9,31 +9,16 @@ import utils.GetDownList;
 
 import java.util.List;
 
-public class AddPurchaseContractPage extends BasePage implements IAddContractPage{
+public class AddPurchaseContractPage extends BasePage {
     public WebElement pcp;
     public AddPurchaseContractPage(BaseDriver baseDriver) {
         super(baseDriver);
         this.pcp = new ProjectManagePage(baseDriver).addMainContractPage();
     }
 
-    @Override
-    public WebElement getCloseButton() {
-        return getElementByElement(pcp,"closeButton");
-    }
-
-    @Override
-    public WebElement getCommitButton() {
-        return null;
-    }
-
-    @Override
-    public WebElement getCancelButton() {
-        return null;
-    }
-
     /**
      * 获取所有的合同类型
-     * @return
+     * @return 所有类型类型
      */
     public List<WebElement> getAllContractType(){
         clickElementByElement(pcp, "mainContractType");
@@ -49,15 +34,15 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
     }
     /**
      * 最新合同编号
-     * @return
+     * @return 最新合同编号
      */
     public WebElement getPurContractNumber(){
         return getElementByElement(pcp,"pur-newContractNumber");
     }
 
     /***
-     * 关联主合同输入框
-     * @return
+     * 关联主合同输入 框
+     * @return 关联合同输入框
      */
     public WebElement getRelativeContract(){
         return getElementByElement(pcp,"pur-relativeContractInput");
@@ -90,7 +75,7 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
     }
     /**
      * 登记时间
-     * @return
+     * @return 登记时间输入框
      */
     public WebElement getRegisterDate(){
         return getElementByElement(pcp,"pur-registerDateInput");
@@ -98,7 +83,7 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
 
     /**
      * 采购合同合同编号
-     * @return
+     * @return 最新合同编号
      */
     public WebElement getPurContractNumberInput(){
         return getElementByElement(pcp,"pur-contractNumberInput");
@@ -106,23 +91,23 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
 
     /**
      * 采购合同项目名称
-     * @return
+     * @return 项目名称
      */
     public WebElement getProjectName(){
         return getElementByElement(pcp,"pur-projectNameInput");
     }
 
     /**
-     * 采购合同工程地点输入框
-     * @return
+     *
+     * @return 采购合同工程地点输入框
      */
     public WebElement getProjectSite(){
         return getElementByElement(pcp,"pur-projectSiteInput");
     }
 
     /**
-     * 采购合同需方名称
-     * @return
+     *
+     * @return 采购合同需方名称
      */
     public WebElement getBuyerNameInput(){
         return getElementByElement(pcp,"pur-buyerNameInput");
@@ -131,13 +116,8 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
     public WebElement getSupplierNameInput(){
         return getElementByElement(pcp,"pur-supplierNameInput");
     }
-    /**
-     * 实施实体输入框
-     * @return
-     */
-    public WebElement getPracticingEntityInput(){
-        return getElementByElement(pcp,"pur-practicingEntityInput");
-    }
+
+
 
     /**
      *
@@ -156,13 +136,7 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
     public WebElement getOnePracticingEntityByValue(String value){
         return getElementByValue(value, getPracticingEntityList());
     }
-    /**
-     * 采购合同委托方式
-     * @return
-     */
-    public WebElement getEntrustMethod(){
-        return getElementByElement(pcp,"pur-entrustMethodInput");
-    }
+
 
     /**
      *
@@ -242,13 +216,6 @@ public class AddPurchaseContractPage extends BasePage implements IAddContractPag
         return getElementByElement(pcp,"pur-invoiceAmountInput");
     }
 
-    /**
-     *  付款状态输入框
-     * @return
-     */
-    public WebElement getPaymentStatus(){
-        return getElementByElement(pcp,"pur-paymentStatusInput");
-    }
 
     /**
      *

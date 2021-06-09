@@ -42,6 +42,6 @@ public class AddSubcontractPageHandle {
         spo.clickUploadFileButton();
         String[] files = {"1.jpg","访客记录图片.jpg"};
         UploadFile.uploadFile("D:\\奇怪的文件\\bug截图\\", files);
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

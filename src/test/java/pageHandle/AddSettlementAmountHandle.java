@@ -16,6 +16,6 @@ public class AddSettlementAmountHandle {
     public void addSettlementAmount(){
         sao.sendKeysToSettlementTime("2020-07-06");
         sao.sendKeysToSettlementAmount(GetMoney.getRandomMoney());
-        co.clickContentCloseButton();
+        co.clickCommitContent();
     }
 }

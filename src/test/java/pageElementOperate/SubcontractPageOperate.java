@@ -8,7 +8,7 @@ import utils.GetLocator;
 public class SubcontractPageOperate  extends BaseOperate{
 
     public AddSubcontractPage asp;
-    private BaseDriver baseDriver;
+    public BaseDriver baseDriver;
     public SubcontractPageOperate(BaseDriver baseDriver) {
         super(baseDriver);
         this.asp = new AddSubcontractPage(baseDriver);
@@ -33,13 +33,17 @@ public class SubcontractPageOperate  extends BaseOperate{
         sendKeys(asp.getRelativeContract(),value);
         clickElement(asp.getOneRelativeContractByRandom());
     }
+
+    /**
+     * 随机选择关联主合同
+     */
     public void clickRelativeContractByRandom() {
         clickElement(asp.getOneRelativeContractByRandom());
     }
 
     /**
      * 输入选择关联主合同
-     * @param value
+     * @param value 关联主合同编号
      */
     public void clickRelativeContractByValue(String value){
         sendKeys(asp.getRelativeContract(),value);
@@ -214,12 +218,12 @@ public class SubcontractPageOperate  extends BaseOperate{
         sendKeys(asp.getRemarkInput(),value);
     }
 
-
+    /**
+     * 点击附件按钮
+     */
     public void clickUploadFileButton(){
         clickElement(asp.getFileUploadButton());
     }
-     // 关闭模态框的×
-    public void clickCloseButton(){
-        clickElement(asp.getCloseButton());
-    }
+
+
     }

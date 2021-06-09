@@ -27,7 +27,10 @@ public class ProjectManegeOperate extends BaseOperate{
         return map;
     }
 
+    // 获取主合同页面第几行的字段名称
     public String getTableCellValue(String value, int index){
         return getText(pmp.getTableCell(value, index));
     }
+
+
 }

@@ -13,7 +13,7 @@ public class EditContractBudgetPage extends BasePage {
     public WebElement ebp;
     public EditContractBudgetPage(BaseDriver baseDriver) {
         super(baseDriver);
-        this.ebp = new ProjectManagePage(baseDriver).getOperatePage(ContractOperate.EDIT_CONTRACT_BUDGET.contractOperate);
+        this.ebp = new ProjectManagePage(baseDriver).getOperatePage(ContractOperate.EDIT_CONTRACT_BUDGET.contractOperate, 1);
     }
     // 主合同名称
     public WebElement getContractProjectName(){
@@ -31,7 +31,7 @@ public class EditContractBudgetPage extends BasePage {
     }
 
     // 主合同开票金额
-    public WebElement getSettlementAmount(){
+    public WebElement getInvoiceAmount(){
         return getElementsByElement(ebp, "contractInfo").get(3);
     }
 
@@ -45,14 +45,18 @@ public class EditContractBudgetPage extends BasePage {
         return getElementsByElement(ebp, "contractInfo").get(5);
     }
 
+    // 获取所有行 总共29 行 1 人员费 0 报账合计 28 辅助登记备用金
     public List<WebElement> getBudgetRows(){
         return getElementsByElement(ebp, "tableRow");
     }
 
-    public WebElement getRowByIndex(int index){
+    // 通过index 获取某一行
+    private WebElement getRowByIndex(int index){
         return getBudgetRows().get(index);
     }
-    public WebElement getRowByValue(ContractBudget name){
+
+    // 通过子项名称获取某一行
+    private WebElement getRowByValue(ContractBudget name){
     return getRowByIndex(name.ordinal());
     }
 

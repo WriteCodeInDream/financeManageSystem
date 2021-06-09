@@ -1,6 +1,8 @@
 package enumString;
 
 public enum ContractOperate {
+    // 主合同操作枚举
+
     VIEW_CONTRACT("查看主合同"),
     UPDATE_CONTRACT("编辑主合同"),
     DELETE_CONTRACT("删除主合同"),

@@ -1,6 +1,8 @@
 package enumString;
 
 public enum ContractType {
+    // 主合同类型枚举
+
     MAIN_TYPE("主合同"),
     SUB_TYPE("分包合同"),
     PURCHASES_TYPE("采购合同"),

@@ -13,14 +13,17 @@ public class SelectDriver {
 
 
     public WebDriver getWebDriver(){
+        // 当前浏览器为谷歌浏览器
         if("chrome".equalsIgnoreCase(driverType)){
             System.setProperty("webdriver.chrome.driver","C:\\Users\\Wulj\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
             return new ChromeDriver();
         }
+        // 当前浏览器为火狐浏览器
         if("firefox".equalsIgnoreCase(driverType)){
             System.setProperty("","");
             return new FirefoxDriver();
         }
+        // 当前浏览器为IE浏览器
         if("ie".equalsIgnoreCase(driverType)){
             System.setProperty("","");
             return new InternetExplorerDriver();

@@ -36,6 +36,6 @@ public class AddPurchaseContractHandle {
         pco.sendKeysToPerformanceTimeInput("2021-05-17");
         pco.sendKeysToReturnTimeInput("2021-03-15");
         pco.sendKeysToRemarkInput(GetRandomChinese.create(50));
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

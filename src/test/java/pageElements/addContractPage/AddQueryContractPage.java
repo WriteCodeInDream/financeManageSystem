@@ -9,31 +9,17 @@ import utils.GetDownList;
 
 import java.util.List;
 
-public class AddQueryContractPage extends BasePage implements IAddContractPage{
+public class AddQueryContractPage extends BasePage {
     public WebElement qcp;
     public AddQueryContractPage(BaseDriver baseDriver) {
         super(baseDriver);
         this.qcp = new ProjectManagePage(baseDriver).addMainContractPage();
     }
 
-    @Override
-    public WebElement getCloseButton() {
-        return getElementByElement(qcp,"closeButton");
-    }
-
-    @Override
-    public WebElement getCommitButton() {
-        return null;
-    }
-
-    @Override
-    public WebElement getCancelButton() {
-        return null;
-    }
 
     /**
      * 获取所有的合同类型
-     * @return
+     * @return 所有主合同类型
      */
     public List<WebElement> getAllContractType(){
         clickElementByElement(qcp, "mainContractType");
@@ -49,7 +35,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
     }
     /**
      * 最新合同编号
-     * @return
+     * @return 最新咨询合同编号
      */
     public WebElement getQueryContractNumber(){
         return getElementByElement(qcp,"query-newContractNumber");
@@ -57,7 +43,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     /***
      * 关联主合同输入框
-     * @return
+     * @return 关联合同输入框
      */
     public WebElement getRelativeContract(){
         return getElementByElement(qcp,"query-relativeContractInput");
@@ -90,7 +76,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
     }
     /**
      * 登记时间
-     * @return
+     * @return 登记时间输入框
      */
     public WebElement getRegisterDate(){
         return getElementByElement(qcp,"query-registerDateInput");
@@ -98,7 +84,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     /**
      * 咨询合同合同编号
-     * @return
+     * @return 合同编号输入框
      */
     public WebElement getQueryContractNumberInput(){
         return getElementByElement(qcp,"query-contractNumberInput");
@@ -106,7 +92,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     /**
      * 咨询合同项目名称
-     * @return
+     * @return 项目名称输入框
      */
     public WebElement getProjectName(){
         return getElementByElement(qcp,"query-projectNameInput");
@@ -114,7 +100,7 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     /**
      * 咨询合同工程地点输入框
-     * @return
+     * @return 咨询合同工程地点输入框
      */
     public WebElement getProjectSite(){
         return getElementByElement(qcp,"query-projectSiteInput");
@@ -122,19 +108,13 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     /**
      * 咨询合同对方单位输入框
-     * @return
+     * @return 咨询合同对方单位输入框
      */
     public WebElement getOtherSideInput(){
         return getElementByElement(qcp,"query-otherSideInput");
     }
 
-    /**
-     * 实施实体输入框
-     * @return
-     */
-    public WebElement getPracticingEntityInput(){
-        return getElementByElement(qcp,"query-practicingEntityInput");
-    }
+
 
     /**
      *
@@ -152,13 +132,6 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
 
     public WebElement getOnePracticingEntityByValue(String value){
         return getElementByValue(value, getPracticingEntityList());
-    }
-    /**
-     * 咨询合同委托方式
-     * @return
-     */
-    public WebElement getEntrustMethod(){
-        return getElementByElement(qcp,"query-entrustMethodInput");
     }
 
     /**
@@ -233,13 +206,6 @@ public class AddQueryContractPage extends BasePage implements IAddContractPage{
         return getElementByElement(qcp,"query-invoiceAmountInput");
     }
 
-    /**
-     *  付款状态输入框
-     * @return
-     */
-    public WebElement getPaymentStatus(){
-        return getElementByElement(qcp,"query-paymentStatusInput");
-    }
 
     /**
      *

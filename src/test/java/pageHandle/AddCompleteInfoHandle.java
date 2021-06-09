@@ -16,6 +16,6 @@ public class AddCompleteInfoHandle {
     public void addCompleteInfo(){
         cio.sendKeysToCompleteInfoInput(GetRandomChinese.create());
         cio.sendKeysToCompleteTime("2020-05-03");
-        co.clickContentCloseButton();
+        co.clickCloseContent();
     }
 }

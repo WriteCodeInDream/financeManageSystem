@@ -72,7 +72,7 @@
                         <suiteXmlFile>testNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                        <allure.results.directory>D:/testResult/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>

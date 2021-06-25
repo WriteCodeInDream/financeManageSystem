@@ -13,7 +13,6 @@ public class LoginPage extends BasePage{
     public LoginPage(BaseDriver baseDriver){
         super(baseDriver);
         this.cp = new CommonPageOperate(baseDriver);
-        System.out.println(baseDriver.getCurrentUrl());
         // 当前页面不含login 则登出至登录页面
         if(!baseDriver.getCurrentUrl().contains("login")){
             cp.loginOut();

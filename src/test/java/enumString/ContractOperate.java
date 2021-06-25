@@ -14,7 +14,7 @@ public enum ContractOperate {
     VIEW_CONTRACT_BUDGET("查看合同预算"),
     EDIT_CONTRACT_BUDGET("编辑合同预算"),
     ADD_CONTRACT_PAYMENT("新增合同付款"),
-    VIEW_CONTRACT_PAYMENT("编辑合同付款"),
+    VIEW_CONTRACT_PAYMENT("查看合同付款"),
     VIEW_RELATIVE_CONTRACT("查看关联合同"),
     VIEW_RELATIVE_INFO("查看综合信息"),
     ;

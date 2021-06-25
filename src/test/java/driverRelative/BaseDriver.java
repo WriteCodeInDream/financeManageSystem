@@ -132,6 +132,10 @@ public class BaseDriver {
         return element.getAttribute("value");
     }
 
+    public String getAttribute(WebElement element, String attributeName){
+        return element.getAttribute(attributeName);
+    }
+
     // 获取模态框下预算文本内容
     public String getTextByElement(By by, WebElement element){
         return element.findElement(by).getText();
@@ -171,3 +175,4 @@ public class BaseDriver {
 
 
 }
+

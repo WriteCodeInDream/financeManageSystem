@@ -1,12 +1,11 @@
 package pageElements;
 
 import driverRelative.BaseDriver;
+import enumString.MainSearchCondition;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pageHandle.LoginHandle;
-import utils.GetEnvironment;
-import utils.GetPage;
-import utils.TimeSleep;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -109,6 +108,9 @@ public class ProjectManagePage extends BasePage{
      */
     public WebElement getOperatePage(String value, int index){
         clickElement(getOneOperate(value,index));
+        if (value.contains("关联合同")){
+            return getElement("relativePage");
+        }
         return getElement("pageWrap");
     }
 
@@ -118,8 +120,7 @@ public class ProjectManagePage extends BasePage{
      * @return 默认取第一个操作
      */
     public WebElement getOperatePage(String value){
-        clickElement(getOneOperate(value,0));
-        return getElement("pageWrap");
+        return getOperatePage(value, 0 );
     }
 
     /**
@@ -155,6 +156,20 @@ public class ProjectManagePage extends BasePage{
         return getAllTableCells(index).get(map.get(value));
     }
 
+
+    // 通过名称获取条件查询框 主要针对所有权限人员，无权限人员不进行
+    public WebElement getSearchInputByConditionName(MainSearchCondition msc){
+        return getElements("input").get(msc.ordinal());
+    }
+
+    public WebElement getElementListItem(String value){
+        return getElementByValue(value, GetDownList.getDownList(baseDriver));
+    }
+
+    public List<WebElement> beginAndEndTime(MainSearchCondition name){
+        clickElement(getElements("input").get(name.ordinal()));
+        return getElements("dateControl");
+    }
     /**
      * 初始化map信息
      */

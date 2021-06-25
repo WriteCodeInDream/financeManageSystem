@@ -7,10 +7,12 @@ import utils.GetEnvironment;
 import utils.GetLocator;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class BasePage {
     public BaseDriver baseDriver;
+    Random random = new Random();
     public BasePage(BaseDriver baseDriver){
         this.baseDriver = baseDriver;
         baseDriver.setImplicitlyWait();
@@ -43,7 +45,6 @@ public class BasePage {
      * 从下拉列表中随机获取一个元素
      */
     public WebElement getElementByRandom(List<WebElement> elements){
-        Random random = new Random();
         int index = random.nextInt(elements.size());
         return elements.get(index);
     }
@@ -57,7 +58,7 @@ public class BasePage {
                 return element;
             }
         }
-        throw new RuntimeException("没有找到“"+value+"”请检查元素是否输入正确");
+        throw new NoSuchElementException("没有找到“"+value+"”请检查元素是否输入正确");
     }
 
     /**
@@ -95,7 +96,4 @@ public class BasePage {
         baseDriver.getUrl(url);
     }
 
-    public void closeDriver(){
-        baseDriver.closeDriver();
-    }
 }

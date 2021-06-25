@@ -1,11 +1,11 @@
 package utils;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import driverRelative.BaseDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class GetDownList {
         public static List<WebElement> getDownList(BaseDriver baseDriver){
@@ -15,7 +15,7 @@ public class GetDownList {
                     return element.findElements(By.xpath("li"));
                 }
             }
-            throw new RuntimeException("没有找到符合条件的下拉列表");
+            throw new NoSuchElementException("没有找到符合条件的下拉列表");
         }
 
         public static List<WebElement> getUserList(BaseDriver baseDriver){
@@ -25,6 +25,6 @@ public class GetDownList {
                     return element.findElements(By.xpath("li"));
                 }
             }
-            throw new RuntimeException("没有找到符合条件的下拉列表");
+            throw new NoSuchElementException("没有找到符合条件的下拉列表");
         }
 }

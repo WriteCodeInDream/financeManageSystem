@@ -98,12 +98,12 @@ public class CostBudgetListPage extends BasePage {
 
     // 切换至预算页面
     public WebElement costBudgetPage(){
-        return getElements("costTab").get(0);
+        return getElements("tabChange").get(0);
     }
 
     // 切换至付款页面
     public WebElement costPaymentPage(){
-        return getElements("costTab").get(1);
+        return getElements("tabChange").get(1);
     }
 
     private void initList(){

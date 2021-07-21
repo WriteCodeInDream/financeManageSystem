@@ -40,7 +40,7 @@ public class BaseDriver {
     /**
      * 返回上一操作页面
      */
-    public void rebackPage(){
+    public void reBackPage(){
         baseDriver.navigate().back();
     }
 
